@@ -1,4 +1,4 @@
-# Deep Dream App
+# Deep Dream Application
 
 The Deep Dream App is a graphical user interface (GUI) application that allows you to apply Deep Dream algorithms to images using various parameters. Deep Dream is a computer vision technique that enhances images by altering them in a way that showcases the patterns and features that a neural network model has learned.
 
