@@ -53,4 +53,4 @@ Ensure you have these libraries installed before running the application.
 - Should you see a terminal pop-up on run, simply hit [enter] to begin the program and your application will open.
 - After hitting the [Apply] button, wait as the page is seemingly unreponsive but is simply loading deep dream affects.
 
-
+![demo](https://github.com/cubinCheese/deep_dream/assets/93562548/6dec6c5a-4dd8-4f8f-b0ac-9467f5b14d00)
