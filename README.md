@@ -49,4 +49,8 @@ Ensure you have these libraries installed before running the application.
     - **(step 2)** cd deep-dream-app
     - **(step 3)** Run deep_dream_app.py 
 
+**(Note)** 
+- Should you see a terminal pop-up on run, simply hit [enter] to begin the program and your application will open.
+- After hitting the [Apply] button, wait as the page is seemingly unreponsive but is simply loading deep dream affects.
+
 

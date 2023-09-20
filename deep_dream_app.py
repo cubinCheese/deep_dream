@@ -13,6 +13,16 @@ from PyQt5.QtCore import Qt
 
 from deep_dream import graph, deepdream
 
+# Define a dark color scheme
+dark_color_scheme = {
+    'background_color': 'rgb(30, 30, 30)',
+    'text_color': 'white',
+    'button_background_color': 'rgb(50, 50, 50)',
+    'button_text_color': 'white',
+    'slider_background_color': 'rgb(50, 50, 50)',
+    'slider_handle_color': 'rgb(0, 122, 204)',  # A blue color for the slider handle
+}
+
 # valid layer checking -- not strictly necessary -- currently only applying one combination layer option
 def isLayerValid(layer):
     try:
@@ -37,6 +47,9 @@ class DeepDreamApp(QMainWindow):
     def initUI(self):
         self.setWindowTitle('Deep Dream App')
         self.setGeometry(100, 100, 800, 600)
+
+        # Set the application style to Fusion (for dark mode)
+        QApplication.setStyle('Fusion')
 
         self.central_widget = QWidget(self)
         self.setCentralWidget(self.central_widget)
@@ -66,6 +79,7 @@ class DeepDreamApp(QMainWindow):
         
         # Creating 'Channel' slider 
         self.channel_label = QLabel('Channel:')
+        self.channel_label.setStyleSheet(f'color: {dark_color_scheme["text_color"]};')  # Set text color to white
         self.channel_slider = QSlider(Qt.Horizontal)
         self.channel_slider.setMinimum(0)
         self.channel_slider.setMaximum(255)
@@ -75,6 +89,7 @@ class DeepDreamApp(QMainWindow):
 
         # Creating 'Iterations' slider
         self.iterations_label = QLabel('Iterations:')
+        self.iterations_label.setStyleSheet(f'color: {dark_color_scheme["text_color"]};')  # Set text color to white
         self.iterations_slider = QSlider(Qt.Horizontal)
         self.iterations_slider.setMinimum(1)
         self.iterations_slider.setMaximum(100)
@@ -84,6 +99,7 @@ class DeepDreamApp(QMainWindow):
 
         # Creating 'step size' slider
         self.step_size_label = QLabel('Step Size:')
+        self.step_size_label.setStyleSheet(f'color: {dark_color_scheme["text_color"]};')  # Set text color to white
         self.step_size_slider = QSlider(Qt.Horizontal)
         self.step_size_slider.setMinimum(1)
         self.step_size_slider.setMaximum(100)
@@ -93,6 +109,7 @@ class DeepDreamApp(QMainWindow):
 
         # Creating 'number of octaves' slider
         self.num_octaves_label = QLabel('Num Octaves:')
+        self.num_octaves_label.setStyleSheet(f'color: {dark_color_scheme["text_color"]};')  # Set text color to white
         self.num_octaves_slider = QSlider(Qt.Horizontal)
         self.num_octaves_slider.setMinimum(1)
         self.num_octaves_slider.setMaximum(10)
@@ -102,6 +119,7 @@ class DeepDreamApp(QMainWindow):
 
         # Creating 'octave scale' slider
         self.octave_scale_label = QLabel('Octave Scale:')
+        self.octave_scale_label.setStyleSheet(f'color: {dark_color_scheme["text_color"]};')  # Set text color to white
         self.octave_scale_slider = QSlider(Qt.Horizontal)
         self.octave_scale_slider.setMinimum(1)
         self.octave_scale_slider.setMaximum(100)
@@ -111,15 +129,27 @@ class DeepDreamApp(QMainWindow):
 
         # Creates download button for user to save output image
         self.download_button = QPushButton('Download')
+        self.download_button.setStyleSheet(f'color: {dark_color_scheme["text_color"]};')  # Set text color to white
         self.download_button.setEnabled(False)
         self.download_button.clicked.connect(self.downloadImage)
         self.layout.addWidget(self.download_button)
 
         # Creates exit button within UI
         self.exit_button = QPushButton('Exit Application')
+        self.exit_button.setStyleSheet(f'color: {dark_color_scheme["text_color"]};')  # Set text color to white
         self.exit_button.clicked.connect(self.exitApplication)
         self.layout.addWidget(self.exit_button)
 
+        # Set styles for dark mode
+        self.central_widget.setStyleSheet(f'background-color: {dark_color_scheme["background_color"]};')
+        self.layers_label.setStyleSheet(f'color: {dark_color_scheme["text_color"]};')
+        self.load_button.setStyleSheet(f'background-color: {dark_color_scheme["button_background_color"]}; color: {dark_color_scheme["button_text_color"]};')
+        
+        for button in self.layer_buttons:
+            button.setStyleSheet(f'background-color: {dark_color_scheme["button_background_color"]}; color: {dark_color_scheme["button_text_color"]};')
+
+        self.channel_label.setStyleSheet(f'color: {dark_color_scheme["text_color"]};') # Set styles for other labels, buttons, and sliders
+        
         self.central_widget.setLayout(self.layout)
 
         self.input_image_path = ''
