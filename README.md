@@ -2,6 +2,8 @@
 
 The Deep Dream App is a graphical user interface (GUI) application that allows you to apply Deep Dream algorithms to images using various parameters. Deep Dream is a computer vision technique that enhances images by altering them in a way that showcases the patterns and features that a neural network model has learned.
 
+![demo](https://github.com/cubinCheese/deep_dream/assets/93562548/6dec6c5a-4dd8-4f8f-b0ac-9467f5b14d00)
+
 ## Core Technologies Used
 
 - **TensorFlow**: Deep Dream App utilizes TensorFlow, an open-source machine learning framework developed by Google, to load and manipulate neural network models such as Inception.
@@ -53,4 +55,3 @@ Ensure you have these libraries installed before running the application.
 - Should you see a terminal pop-up on run, simply hit [enter] to begin the program and your application will open.
 - After hitting the [Apply] button, wait as the page is seemingly unreponsive but is simply loading deep dream affects.
 
-![demo](https://github.com/cubinCheese/deep_dream/assets/93562548/6dec6c5a-4dd8-4f8f-b0ac-9467f5b14d00)
